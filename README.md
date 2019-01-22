@@ -49,13 +49,12 @@ If not,come [here](https://github.com/layumi/Person_reID_baseline_pytorch) to tr
 ```bash
 python train.py --gpu_ids 0 --name ft_ResNet50 --train_all --batchsize 32  --data_dir your_data_path --erasing_p 0.5
 ``` 
+Also, we provide a ResNet50 Model which has been trained using Market1501.
+You can download it from [here](https://pan.baidu.com/s/1w65fT80k0AVUafaYJS4tVQ).
 if you already have it,just run:
 ```bash
-python3 train.py --gpu_ids 0,1,2,3 --name LiangZiZuiShuai --read_name ft_ResNet50 --train_all --batchsize 2 --color_jitter --which_epoch last 
+python3 train.py --gpu_ids 0,1,2,3 --name LiangZiZuiShuai --read_name ft_ResNet50 --train_all --batchsize 2 --color_jitter --which_epoch last --FNN 
 ```
-Warning: the batchsize must be 2. if you want to change that,come to ./Model/hand-on-feature/LOMO.py ,maybe in 315th line,and change the batchsize.You can also use it to change the LOMO feature.
-
-
 ## Test
 Use trained model to extract feature by
 ```bash
